@@ -1,0 +1,45 @@
+$primary-font: 'Roboto', sans-serif;
+$font-weights: (
+  'regular': 400,
+  'medium': 500,
+  'bold': 700,
+);
+$primary-color: #2d2e32;
+$secondary-color: #147efb;
+$typography-color: #0d0d0d;
+$secondary-typo-color: #4f5052;
+$teritary-typo-color: #e5eaf5;
+$accent-blue: #255ad4;
+$primary-blue: #0f255c;
+$secondary-blue: #203e83;
+$secondary-background: #dae0ef;
+$media-queries: (
+  'large': 1040px,
+  'medium': 920px,
+  'small': 517px,
+);
+
+@function query($query) {
+  @return map-get($media-queries, $query);
+}
+
+@function weight($weight) {
+  @return map-get($font-weights, $weight);
+}
+
+@mixin container {
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    max-width: 768px;
+  }
+  @media screen and (min-width: 1024px) {
+    max-width: 1024px;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}

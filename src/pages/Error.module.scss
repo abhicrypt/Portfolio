@@ -1,0 +1,14 @@
+@import '../scss_partials/variables';
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  p {
+    font-size: 28px;
+    text-align: center;
+    font-weight: weight(bold);
+  }
+}

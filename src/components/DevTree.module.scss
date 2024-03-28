@@ -1,0 +1,197 @@
+@import '../scss_partials/reset';
+
+.wave {
+  width: 100%;
+}
+.dev {
+  padding-top: 100px;
+  padding-bottom: 200px;
+  background-color: $accent-blue;
+  color: $teritary-typo-color;
+  color: #fff;
+
+  main {
+    @include container;
+
+    @media screen and (min-width: 1250px) {
+      max-width: 80%;
+    }
+    margin: auto;
+    overflow: hidden;
+
+    .caption {
+      font-size: 20px;
+      letter-spacing: 0.2rem;
+      margin-bottom: 10px;
+    }
+    .title {
+      font-size: 60px;
+      margin-bottom: 100px;
+    }
+    .tree {
+      position: relative;
+      padding: 30px 40px;
+
+      .post {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 100%;
+        width: 5px;
+        background-color: $teritary-typo-color;
+      }
+
+      .stage {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+
+        &:nth-of-type(2n) {
+          justify-content: flex-start;
+        }
+        margin-bottom: 20px;
+
+        .badge {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          width: fit-content;
+          margin: auto;
+
+          img {
+            border-radius: 50%;
+            border: 5px solid $teritary-typo-color;
+            width: 70px;
+            height: 70px;
+          }
+        }
+        .content {
+          width: 40%;
+          position: relative;
+          background-color: $primary-blue;
+          padding: 30px;
+          border-radius: 0.5rem;
+          border-bottom: 3px solid $teritary-typo-color;
+
+          .pin {
+            position: absolute;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-right: 10px solid $primary-blue;
+            border-bottom: 10px solid transparent;
+
+            &.left {
+              left: -10px;
+            }
+            &.right {
+              right: -10px;
+              transform: rotate(180deg);
+            }
+          }
+
+          h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+          }
+          p {
+            margin-bottom: 30px;
+            font-weight: weight(medium);
+          }
+
+          ul {
+            list-style-type: none;
+            padding-left: 20px;
+
+            li {
+              margin-bottom: 15px;
+              font-size: 15px;
+              letter-spacing: 0.1rem;
+              line-height: 1.3rem;
+            }
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: 1100px) {
+      padding: 0 50px;
+      .tree {
+        .post {
+          margin: 0;
+          right: unset;
+          left: 0;
+        }
+        .stage {
+          justify-content: flex-start;
+
+          .badge {
+            right: unset;
+            left: -75px;
+          }
+
+          .content {
+            width: 100%;
+            margin-left: 10px;
+
+            .pin {
+              left: -10px;
+              right: unset;
+
+              &.right {
+                transform: rotate(0);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include mobile {
+      padding: 0 20px;
+      .tree {
+        padding: 0 10px;
+
+        .post {
+          left: 20px;
+        }
+
+        .stage {
+          justify-content: flex-end !important;
+
+          .badge {
+            left: -25px;
+          }
+          .content {
+            width: 80%;
+            max-height: 300px;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+              width: 5px;
+              height: 30px;
+            }
+            &::-webkit-scrollbar-track {
+              background: $secondary-blue;
+            }
+            &::-webkit-scrollbar-thumb {
+              background-color: $teritary-typo-color;
+              height: 5px;
+            }
+          }
+        }
+      }
+      .title {
+        font-size: 35px;
+      }
+      .caption {
+        font-size: 18px;
+        letter-spacing: unset;
+      }
+    }
+  }
+}

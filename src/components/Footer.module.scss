@@ -1,0 +1,78 @@
+@import "../scss_partials/variables";
+
+.footer {
+    margin-top: 50px;
+    background-color: $primary-color;
+    color: #fff;
+
+    .content {
+        max-width: 1100px;
+        margin: auto;
+        padding: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .contact {
+            display: flex;
+            align-items: center;
+
+            .icon {
+                margin-right: 40px;
+                font-size: 1.5rem;
+                padding: 15px 17px;
+                background-color: #fff;
+                color: $primary-color;
+                border-radius: 50%;
+            }
+
+            h1 {
+                margin-bottom: 10px;
+            }
+
+            a {
+                display: block;
+                margin-bottom: 10px;
+                color: #fff;
+                text-decoration: none;
+                font-weight: weight(regular);
+            }
+        }
+
+        .links {
+            .icon {
+                font-size: 1.7rem;
+                margin-left: 20px;
+                color: #fff;
+                text-decoration: none;
+                transition: .2s;
+
+                @media screen and (min-width: query(medium)) {
+                    &:hover {
+                        font-size: 1.9rem;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width:query(small)) {
+            flex-direction: column;
+
+            .contact {
+                margin-bottom: 30px;
+            }
+
+            .links {
+                width: 100%;
+                justify-content: flex-start;
+
+                .icon {
+                    margin-left: 0;
+                    margin-right: 20px;
+                }
+            }
+        }
+
+
+    }
+}

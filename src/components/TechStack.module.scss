@@ -1,0 +1,84 @@
+@import '../scss_partials/variables';
+
+.skills {
+  @include container;
+  margin: auto;
+  margin-bottom: 300px;
+
+  .caption {
+    font-size: 20px;
+    color: $secondary-typo-color;
+    letter-spacing: 0.1rem;
+    margin-bottom: 10px;
+  }
+  .title {
+    font-size: 60px;
+    color: $typography-color;
+    margin-bottom: 80px;
+  }
+
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.25rem;
+    .tech {
+      width: 225px;
+      padding: 0.25rem;
+      background-color: $secondary-background;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        min-height: 180px;
+        padding: 20px 40px;
+      }
+
+      img {
+        width: 55px;
+        height: 55px;
+      }
+      p {
+        font-size: 20px;
+        text-align: center;
+        font-weight: weight(bold);
+        background: linear-gradient(to bottom, $primary-blue, $accent-blue);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+    }
+
+    @include mobile {
+      justify-content: center;
+
+      .tech {
+        width: 180px;
+      }
+    }
+
+    @media screen and (max-width: 640px) {
+      .tech {
+        width: 80%;
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    padding: 0 30px;
+
+    .caption {
+      font-size: 18px;
+    }
+    .title {
+      font-size: 40px;
+    }
+  }
+}

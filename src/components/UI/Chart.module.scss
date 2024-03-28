@@ -1,0 +1,9 @@
+@import '../../scss_partials/variables';
+
+.charts {
+  width: fit-content;
+
+  @include mobile {
+    display: none !important;
+  }
+}
